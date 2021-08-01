@@ -10,7 +10,7 @@ const BUY_BALL = 'BUY_BALL';
 const BallReducer =(state=intialstate, action)=>{
      switch(action.type) {
          case BUY_BALL:
-             return {...state,noofBalls=state.noofBalls-1}
+             return {...state,noofBalls:state.noofBalls-1}
          default:
              return state
      }
