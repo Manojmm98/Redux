@@ -1,14 +1,18 @@
 import React from 'react'
 import {buyball} from './ReduxFile/Ball/BallAction';
 import {connect} from 'react-redux'
-import BallReducer from './ReduxFile/Ball/BallReducer'
 function BallContainer(props) {
-    console.log(props.noofBalls);
+    console.log('ball render');
     return (
+         
         <div>
             <h2>No of ball - {props.noofBalls}</h2>
-            <button onClick={props.buyball}>Buy</button>
+            <button onClick={props.buyball}>Buy  balls</button>
         </div>
+         
+        
+      
+    
     )
 }
 // there are two method of ball container 
@@ -17,10 +21,11 @@ function BallContainer(props) {
 
 // mapStateToProps return the updated number of balls
 
+// we placed our reducer insidre root recuer within a object with name ball so we do state.ball.noofballs
 const mapStateToProps =state => {
-    console.log(state);
+    //console.log(state);
          return {
-             noofBalls:state.noofBalls,
+             noofBalls:state.ball.noofBalls,
          }
 }
 
@@ -28,7 +33,7 @@ const mapStateToProps =state => {
 // here mapToDispatchToProps is caling for dispatching  action buyball through calling buyball function 
 const mapDispatchToProps =dispatch => {
     return {
-         buyball: ()=>dispatch(buyball())
+         buyball: ()=>dispatch(buyball()),
     }
 }
 
