@@ -6,7 +6,7 @@ import BallContainer from './BallContainer'
 function App() {
   return (
     <Provider store={store}>
-      <div className="app">
+      <div className="App">
         <BallContainer/>
       </div>
     </Provider>

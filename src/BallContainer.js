@@ -25,14 +25,13 @@ const mapStateToProps =state => {
 }
 
 // mapToDispatchToProps
-// here mapToDispatchToProps is caling for dispatching an action 
+// here mapToDispatchToProps is caling for dispatching  action buyball through calling buyball function 
 const mapDispatchToProps =dispatch => {
     return {
          buyball: ()=>dispatch(buyball())
     }
 }
 
-//export default connect(mapStateToProps,mapDispatchToProps)(BallContainer)
-
+// we have to wrap the two component with connect and have to export it with BallContainer 
 export default connect(mapStateToProps,mapDispatchToProps)(BallContainer)
 
