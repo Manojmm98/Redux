@@ -6,6 +6,6 @@ const BUY_BALL = 'BUY_BALL';
 
 export const buyball =()=>{
     return {
-             type: BUY_BALL,
+             type: BUY_BALL
     }
 }

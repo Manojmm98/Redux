@@ -8,6 +8,7 @@ const intialstate ={
 const BUY_BALL = 'BUY_BALL';
 // we are passing state as intialstate because if we make any changes to it then it will be visible every where h
 const BallReducer =(state=intialstate, action)=>{
+    //console.log(state);
      switch(action.type) {
          case BUY_BALL:
              return {...state,noofBalls:state.noofBalls-1}
@@ -16,3 +17,4 @@ const BallReducer =(state=intialstate, action)=>{
      }
 }
 export default BallReducer
+

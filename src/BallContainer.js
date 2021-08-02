@@ -3,10 +3,10 @@ import {buyball} from './ReduxFile/Ball/BallAction';
 import {connect} from 'react-redux'
 import BallReducer from './ReduxFile/Ball/BallReducer'
 function BallContainer(props) {
-    console.log(props);
+    console.log(props.noofBalls);
     return (
         <div>
-            <h2>No of ball : {props.noofBalls}</h2>
+            <h2>No of ball - {props.noofBalls}</h2>
             <button onClick={props.buyball}>Buy</button>
         </div>
     )
@@ -18,17 +18,21 @@ function BallContainer(props) {
 // mapStateToProps return the updated number of balls
 
 const mapStateToProps =state => {
+    console.log(state);
          return {
              noofBalls:state.noofBalls,
          }
 }
 
 // mapToDispatchToProps
-// here mapToDispatchToProps is caling for dispatching function 
-const mapToDispatchToProps =dispatch => {
+// here mapToDispatchToProps is caling for dispatching an action 
+const mapDispatchToProps =dispatch => {
     return {
          buyball: ()=>dispatch(buyball())
     }
 }
 
-export default connect(mapToDispatchToProps,mapStateToProps)(BallContainer)
+//export default connect(mapStateToProps,mapDispatchToProps)(BallContainer)
+
+export default connect(mapStateToProps,mapDispatchToProps)(BallContainer)
+
