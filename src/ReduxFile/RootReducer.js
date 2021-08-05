@@ -4,10 +4,12 @@
 import { combineReducers } from "redux";
 import BallReducer from './Ball/BallReducer';
 import BatReducer from './Bat/BatReducer';
+import UserReducer from './Users/UserReducer'
 
 const rootReducer = combineReducers ( {
     ball:BallReducer,
-    bat:BatReducer
+    bat:BatReducer,
+    user:UserReducer,
 })
 
 export default rootReducer;
